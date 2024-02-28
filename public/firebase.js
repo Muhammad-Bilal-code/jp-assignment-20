@@ -75,7 +75,8 @@ window.handleGetData = function () {
       console.log(key);
       console.log(fetchData[key]);
 
-      myData.innerHTML += ` <div class="col-md-4 border p-1">
+      myData.innerHTML += ` <div class="col-md-6 ">
+      <div class="border border-2 p-2">
       <h3>${
         fetchData[key].fullName[0].toUpperCase() +
         fetchData[key].fullName.slice(1)
@@ -84,6 +85,7 @@ window.handleGetData = function () {
       <li class="mb-1"><strong>Email</strong> : ${fetchData[key].email}</li>
       <li class="mb-1"><strong>Course : </strong>${fetchData[key].course}</li>
       </ul>
+      </div>
     </div>`;
     }
   });
