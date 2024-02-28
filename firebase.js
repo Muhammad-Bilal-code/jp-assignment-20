@@ -5,6 +5,7 @@ import {
   push,
   ref,
   set,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -63,3 +64,10 @@ window.handleAdd = function (e) {
   set(ref(database, `StudentData/${studentData.id}`), studentData);
   console.log("Add End");
 };
+
+window.handleGetData = function () {
+  onValue(ref(database, "StudentData"), function (data) {
+    console.log(data.val());
+  });
+};
+handleGetData();
